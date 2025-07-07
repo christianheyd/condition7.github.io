@@ -5,10 +5,9 @@ import { PortraitsComponent } from './pages/portraits/portraits.component';
 import { StudentsComponent } from './pages/students/students.component';
 
 export const routes: Routes = [
-    { path: 'home', component: HomeComponent},
+    { path: '', component: HomeComponent},
     { path: 'originals', component: OriginalsComponent },
     { path: 'portraits', component: PortraitsComponent },
     { path: 'students',  component: StudentsComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full'},
-    { path: '**', redirectTo: '/home'}
+    { path: '**', redirectTo: ''}
 ];

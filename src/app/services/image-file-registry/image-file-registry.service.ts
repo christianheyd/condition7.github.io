@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { ImageFile } from './image-file.interface';
 
-enum PROJECT_CATEGORIES {
-  Originals = 'Originals',
-  Portraits = 'Portraits',
-  Students = 'Students',
+export enum PROJECT_CATEGORIES {
+  Home = 'home',
+  Originals = 'originals',
+  Portraits = 'portraits',
+  // Students = 'students',
 }
 
 @Injectable({
@@ -24,15 +25,48 @@ export class ImageFileRegistryService {
    * */
   public images: Array<ImageFile> = [
     {
+      name: '777red',
+      path: `${this.IMAGE_FOLDER_PATH}/home/777red.jpeg`,
+      category: PROJECT_CATEGORIES.Home,
+    },
+    {
+      name: 'lightsblue',
+      path: `${this.IMAGE_FOLDER_PATH}/home/lightsblue.jpeg`,
+      category: PROJECT_CATEGORIES.Home,
+    },
+    {
+      name: 'lightshow',
+      path: `${this.IMAGE_FOLDER_PATH}/home/lightshow.jpeg`,
+      category: PROJECT_CATEGORIES.Home,
+    },
+    {
       name: 'Blue',
       path: `${this.IMAGE_FOLDER_PATH}/originals/blue.jpg`,
       category: PROJECT_CATEGORIES.Originals,
+      caption: 'A test caption',
     },
     {
       name: 'Gone Swimming',
       path: `${this.IMAGE_FOLDER_PATH}/originals/gone_swimming.jpg`,
       category: PROJECT_CATEGORIES.Originals,
-    }
+    },
+    {
+      name: 'Untitled',
+      path: `${this.IMAGE_FOLDER_PATH}/originals/gone_swimming.jpg`,
+      category: PROJECT_CATEGORIES.Originals,
+      caption: 'A test caption',
+      date: '5/6/2022',
+    },
+    {
+      name: 'Aloy',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/aloy.jpeg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
+    {
+      name: 'Bolaji',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/bolaji.jpg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
   ];
 
 
@@ -48,7 +82,6 @@ export class ImageFileRegistryService {
     // return the first matched image, or null if no match is found
     return matchingImages ? matchingImages[0] : null;
   }
-
 
   /** Filters the image list to those with the specified category */
   filterImagesByCategory(category: string): Array<ImageFile> {
