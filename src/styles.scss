@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'PermanentMarker';
+  src: url('/fonts/PermanentMarker-Regular.ttf');
+}
+
+* {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  box-sizing: border-box;
+}
