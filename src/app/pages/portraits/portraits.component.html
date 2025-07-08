@@ -1,8 +1,10 @@
 <section id="portraits">
   <h1>some title</h1>
-  <div class="image-wrapper">
+  <div class="images">
     @for (imageFile of (imageCategoryService.images$ | async); track $index) {
-      <app-image [image]="imageFile"></app-image>
+      <div class="image-wrapper">
+        <app-image [image]="imageFile"></app-image>
+      </div>
     }
   </div>
 </section>

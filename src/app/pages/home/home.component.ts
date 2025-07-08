@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
   }
 
   private _getImages(): void {
-    this.imageCategoryService.getImages();
+    // this.imageCategoryService.getImages();
+    this.imageCategoryService.getImages('home');
   }
 
 }

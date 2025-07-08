@@ -21,9 +21,13 @@ export class ImageCategoryService implements OnDestroy {
   /** Updates the internal array of images based on the provided context. */
   getImages(context?: string): void {
     switch (context) {
-      default:
-      case PROJECT_CATEGORIES.Home: {
+      default: {
         this._images$.next(this._imageFileRegistryService.getImages());
+        break;
+      }
+
+      case PROJECT_CATEGORIES.Home: {
+        this._images$.next(this._imageFileRegistryService.filterImagesByCategory(PROJECT_CATEGORIES.Home));
         break;
       }
 
