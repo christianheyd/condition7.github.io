@@ -1,21 +1,29 @@
 nav {
+  background: darkblue;
+  border-bottom: 2px solid white;
   display: flex;
   flex-direction: row;
-  height: 48px;
+  height: 3.75rem;
+  padding: 0.5rem;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
 
   .header {
+    color: rgb(78, 161, 239);
     display: inline-flex;
     align-items: center;
     margin-right: auto;
     margin-block-start: 0;
     margin-block-end: 0;
     font-family: 'PermanentMarker';
-    font-size: 40px;
-    line-height: 32px;
+    font-size: 3.5rem;
+    line-height: 2.25rem;
+    
+    a {
+      color: rgb(78, 161, 239);
+    }
   }
 
   .links {
@@ -29,10 +37,19 @@ nav {
       list-style: none;
       font-family: 'PermanentMarker';
       font-size: 24px;
-      a {
-        text-decoration: none;
-      }
+
+       a {
+        color: white;
+
+        &:hover {
+          color: rgb(255, 0, 0);
+        }
+       }
     }
   }
-}
 
+
+  a {
+    text-decoration: none;
+  }
+}

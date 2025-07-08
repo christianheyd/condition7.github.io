@@ -51,11 +51,41 @@ export class ImageFileRegistryService {
       category: PROJECT_CATEGORIES.Originals,
     },
     {
+      name: 'Ojima Morishita',
+      path: `${this.IMAGE_FOLDER_PATH}/originals/ojima-morishita.jpg`,
+      category: PROJECT_CATEGORIES.Originals,
+    },
+    {
       name: 'Untitled',
-      path: `${this.IMAGE_FOLDER_PATH}/originals/gone_swimming.jpg`,
+      path: `${this.IMAGE_FOLDER_PATH}/originals/IMG_0396.jpeg`,
+      category: PROJECT_CATEGORIES.Originals,
+    },
+    {
+      name: 'Produce',
+      path: `${this.IMAGE_FOLDER_PATH}/originals/produce.jpeg`,
+      category: PROJECT_CATEGORIES.Originals,
+    },
+    {
+      name: 'Rebirth',
+      path: `${this.IMAGE_FOLDER_PATH}/originals/rebirth.jpg`,
+      category: PROJECT_CATEGORIES.Originals,
+    },
+    {
+      name: 'Sky',
+      path: `${this.IMAGE_FOLDER_PATH}/originals/sky.jpeg`,
+      category: PROJECT_CATEGORIES.Originals,
+    },
+    {
+      name: 'Untitled',
+      path: `${this.IMAGE_FOLDER_PATH}/originals/untitled-5-6-22.jpeg`,
       category: PROJECT_CATEGORIES.Originals,
       caption: 'A test caption',
       date: '5/6/2022',
+    },
+    {
+      name: 'Viceroy',
+      path: `${this.IMAGE_FOLDER_PATH}/originals/viceroy.jpeg`,
+      category: PROJECT_CATEGORIES.Originals,
     },
     {
       name: 'Aloy',
@@ -65,6 +95,46 @@ export class ImageFileRegistryService {
     {
       name: 'Bolaji',
       path: `${this.IMAGE_FOLDER_PATH}/portraits/bolaji.jpg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
+    {
+      name: 'Bolder',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/bolder.jpg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
+    {
+      name: 'Dion',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/dion.jpeg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
+    {
+      name: 'Earl',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/earl.jpeg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
+    {
+      name: 'Handle With Care',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/handle-with-care.jpeg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
+    {
+      name: 'Kid Cudi',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/kid-cudi.jpg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
+    {
+      name: 'Kid Cudi II',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/ii.jpg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
+    {
+      name: 'Muse in Blue',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/muse-in-blue.jpg`,
+      category: PROJECT_CATEGORIES.Portraits,
+    },
+    {
+      name: 'Sade (2)',
+      path: `${this.IMAGE_FOLDER_PATH}/portraits/sade-2.jpeg`,
       category: PROJECT_CATEGORIES.Portraits,
     },
   ];

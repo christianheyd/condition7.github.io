@@ -42,7 +42,5 @@ export class ImageCategoryService implements OnDestroy {
       //   break;
       // }
     };
-
-    console.log(this._images$.value);
   }
 }
