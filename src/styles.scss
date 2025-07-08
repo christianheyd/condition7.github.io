@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @font-face {
   font-family: 'PermanentMarker';
-  src: url('/fonts/PermanentMarker-Regular.ttf');
+  src: url('/assets/fonts/PermanentMarker-Regular.ttf');
 }
 
 * {
@@ -13,5 +13,5 @@
 }
 
 body {
-  background: rgb(0, 18, 24);
+  background: rgb(0, 18, 24)
 }
