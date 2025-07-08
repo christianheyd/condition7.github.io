@@ -1,10 +1,4 @@
 <section id="home">
   <h1>some title</h1>
-  <div class="images">
-    @for (imageFile of (imageCategoryService.images$ | async); track $index) {
-      <div class="image-wrapper">
-        <app-image [image]="imageFile"></app-image>
-      </div>
-    }
-  </div>
+  <app-image-grid></app-image-grid>
 </section>
