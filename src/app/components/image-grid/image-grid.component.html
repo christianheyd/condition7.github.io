@@ -1,7 +1,9 @@
-<!-- <div class="images">
-  @for (imageFile of (imageCategoryService.images$ | async); track $index) {
-    <div class="image-wrapper">
-      <app-image [image]="imageFile"></app-image>
-    </div>
-  }
-</div> -->
+@if (images && images.length) {
+  <div class="images">
+    @for (image of images; track $index) {
+      <div class="image-wrapper">
+        <app-image [image]="image"></app-image>
+      </div>
+    }
+  </div>
+}

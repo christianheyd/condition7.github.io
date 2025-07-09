@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { ImageComponent } from '../../components/image/image.component';
 import { ImageCategoryService } from '../../services/image/image-category.service';
+import { ImageGridComponent } from '../../components/image-grid/image-grid.component';
 
 @Component({
   selector: 'app-originals',
   standalone: true,
   imports: [
     AsyncPipe,
-    ImageComponent,
+    ImageGridComponent,
   ],
   templateUrl: './originals.component.html',
   styleUrl: './originals.component.scss',
