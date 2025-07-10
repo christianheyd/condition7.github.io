@@ -4,8 +4,8 @@
   src: url('/assets/fonts/PermanentMarker-Regular.ttf');
 }
 
-body {
+html, body { height: 100%; }
+body { 
+  margin: 0; 
   background: rgb(0, 18, 24);
-  margin: 0;
 }
-

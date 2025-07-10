@@ -1,8 +1,15 @@
-main {
+:host {
   display: flex;
-  width: 100%;
-  margin-top: 70px;
-  padding: 8px;
+}
+
+main {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+  max-height: calc(100vh - 70px);
+  padding: 8px;
+  width: 100%;
   overflow: auto;
 }
