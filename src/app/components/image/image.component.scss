@@ -2,5 +2,17 @@
   img {
     width: 100%;
     height: auto;
+    cursor: pointer;
+  }
+}
+
+.dialog-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    max-height: 90vh;
+    max-width: 90vw;
   }
 }

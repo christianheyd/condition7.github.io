@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { 
+  ChangeDetectionStrategy, 
+  Component, 
+  inject, 
+  Input, 
+  TemplateRef, 
+  ViewChild 
+} from '@angular/core';
+import { Dialog } from '@angular/cdk/dialog';
 import { ImageFile } from '../../services/image-file-registry/image-file.interface';
 
 @Component({
@@ -10,15 +18,21 @@ import { ImageFile } from '../../services/image-file-registry/image-file.interfa
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ImageComponent {
+  dialog = inject(Dialog);
+
+  @ViewChild('imageDialog') dialogTemplate: TemplateRef<ImageFile> | undefined;
+  
   /** The image's metadata */
   @Input() image: ImageFile | undefined;
 
-  /** The click event handler */
-  @Output() wasClicked = new EventEmitter<string>();
+  openImageDialog(): void {
+    if (!this.dialogTemplate) return;
 
-  click(): void {
-    if (!this.image) return;
-
-    this.wasClicked.emit(this.image.name);
+    this.dialog.open(this.dialogTemplate, {
+      width: '80vw',
+      data: {
+        image: this.image
+      },
+    });   
   }
 }

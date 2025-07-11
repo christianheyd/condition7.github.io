@@ -1,6 +1,11 @@
-
 @if (image) {
   <div class="wrapper">
-    <img [src]="image.path" [attr.alt]="image.name">
+    <img [src]="image.path" [attr.alt]="image.name" (click)="openImageDialog()">
   </div>
+
+  <ng-template #imageDialog>
+    <div class="dialog-wrapper">
+      <img [src]="image.path" [attr.alt]="image.name">
+    </div>
+  </ng-template>
 }
