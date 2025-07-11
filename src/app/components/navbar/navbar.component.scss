@@ -1,4 +1,30 @@
+@use '@angular/material' as mat;
+
+.links {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  margin-right: 8px;
+  gap: 1vw;
+
+  .link {
+    list-style: none;
+    font-family: 'RubikMonoOne';
+    font-size: 1rem;
+
+      a {
+      text-decoration: none;
+      color: #fff;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
 nav {
+  background: var(--darkest-blue);
   border-bottom: 2px solid white;
   display: flex;
   flex-direction: row;
@@ -8,6 +34,7 @@ nav {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
 
   &::after {
     content: '';
@@ -31,33 +58,56 @@ nav {
     
     a {
       color: var(--light-blue);
+      text-decoration: none;
     }
+  }
+
+  .overlay-menu-button {
+    align-self: center;
+
+    @include mat.icon-overrides((color: #fff));
+
+    &:hover {
+      @include mat.icon_overrides((color: red));
+    }
+  }
+}
+
+.overlay-menu {
+  display: none;
+  background: var(--light-blue);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+
+  &.visible {
+    display: flex;
+    flex-direction: column;
+    top: 72px;
+    height: calc(100vh - 72px);
   }
 
   .links {
-    display: inline-flex;
+    width: 100%;
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding: 0;
-    margin-right: 8px;
-    gap: 1vw;
 
     .link {
-      list-style: none;
-      font-family: 'RubikMonoOne';
-      font-size: 1rem;
-
-       a {
-        color: #fff;
-
-        &:hover {
-          color: red;
-        }
-       }
+      font-size: 3.75rem;
+      margin-bottom: 6.25vh;
     }
   }
 
+  .close-overlay-button {
+    margin: 0 auto 8vh auto;
+    @include mat.icon-overrides((color: #fff));
 
-  a {
-    text-decoration: none;
+    &:hover {
+      @include mat.icon_overrides((color: red));
+    }
   }
 }

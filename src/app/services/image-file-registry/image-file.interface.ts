@@ -5,6 +5,8 @@ export interface ImageFile {
     path: string;
     /** The category of the image. Used to place this image on a certain page. */
     category: string;
+    /** Toggles the caption container display for this image */
+    disableDialogFooter?: boolean;
     /** The optional caption. Will be displayed in the UI when clicking on an image. */
     caption?: string;
     /** The optional date for the image. Will be displayed with the title if it is provided. */

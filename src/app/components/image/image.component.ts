@@ -7,14 +7,14 @@ import {
   ViewChild 
 } from '@angular/core';
 import { Dialog, DialogRef } from '@angular/cdk/dialog';
-import { MatIconModule } from '@angular/material/icon';
 import { ImageFile } from '../../services/image-file-registry/image-file.interface';
+import { IconButtonComponent } from '../icon-button/icon-button.component';
 
 @Component({
   selector: 'app-image',
   standalone: true,
   imports: [
-    MatIconModule
+    IconButtonComponent,
   ],
   templateUrl: './image.component.html',
   styleUrl: './image.component.scss',

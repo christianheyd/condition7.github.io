@@ -5,14 +5,17 @@
 
   <ng-template #imageDialog>
     <div class="dialog-wrapper">
-      <button class="close" (click)="closeDialog()">
-        <mat-icon>close</mat-icon>
-        <span class="cdk-visually-hidden">Close</span>
-      </button>
+      <app-icon-button
+        class="close"
+        icon="close"
+        label="Close"
+        (wasClicked)="closeDialog()"
+      >
+      </app-icon-button>
       <div class="image-wrapper">
         <img [src]="image.path" [attr.alt]="image.name">
       </div>
-      
+      @if (!image.disableDialogFooter) {
         <div class="image-footer">
           <h1>{{image.name}}</h1>
           @if (image.caption || image.date) {
@@ -22,6 +25,7 @@
             </div>
           }
         </div>
+      }
     </div>
   </ng-template>
 }

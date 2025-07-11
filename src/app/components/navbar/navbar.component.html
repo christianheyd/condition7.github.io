@@ -1,11 +1,43 @@
 <nav>
   <p tabindex="0" class="header"><a routerLink="">Condition 7</a></p>
 
-  <ul class="links">
-    @for (item of navItems; track item.name) {
-      <li class="link">
-        <a [routerLink]="item.url" routerLinkActive="active">{{ item.name }}</a>
-      </li>
+  @if (!useOverlayMenu) {
+    <ul class="links">
+      @for (item of navItems; track item.name) {
+        <li class="link">
+          <a [routerLink]="item.url" routerLinkActive="active">{{ item.name }}</a>
+        </li>
+      }
+    </ul>
+  } @else {
+    @if (!showOverlayMenu) {
+      <app-icon-button
+        class="overlay-menu-button"
+        icon="menu"
+        label="Menu"
+        (wasClicked)="openOverlayMenu()"
+      >
+      </app-icon-button>
     }
-  </ul>
+  }
+  
 </nav>
+@if (useOverlayMenu) {
+  <div class="overlay-menu" [class.visible]="showOverlayMenu">
+    <ul class="links">
+      @for (item of navItems; track item.name) {
+        <li class="link">
+          <a [routerLink]="item.url" routerLinkActive="active">{{ item.name }}</a>
+        </li>
+      }
+    </ul>
+    <app-icon-button
+      class="close-overlay-button"
+      icon="close"
+      label="Close"
+      [size]="'8rem'"
+      (wasClicked)="closeOverlayMenu()"
+    >
+    </app-icon-button>
+  </div>
+}
