@@ -1,3 +1,5 @@
+@use '@angular/material' as mat;
+
 .wrapper {
   img {
     width: 100%;
@@ -8,11 +10,78 @@
 
 .dialog-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 
-  img {
-    max-height: 90vh;
-    max-width: 90vw;
+  .close {
+    display: inline-flex;
+    margin-left: auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    
+    &:focus{
+      outline: none;
+    }
+
+    @include mat.icon-overrides((
+      color: #fff
+    ));
+
+    .mat-icon {
+      font-size: 48px;
+      line-height: 48px;
+      height: 48px;
+      width: 48px;
+    }
+  }
+
+  .image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-height: 80vh;
+      max-width: 90vw;
+    }
+  }
+
+  .image-footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    padding: 4px;
+    background: white;
+    font-family: 'RubikMonoOne';
+    color: black;
+
+    h1, p {
+      margin-block: unset;
+    }
+
+    p:not(last-of-type) {
+      margin-bottom: 4px;
+    }
+
+    .footer-details {
+      display: flex;
+
+      p {
+        display: inline-flex;
+      }
+
+      .caption {
+        margin-right: auto;
+      }
+
+      .date {
+        margin-left: auto;
+      }
+    }
+
+    .caption {
+      font-size: 1.125rem;
+    }
   }
 }

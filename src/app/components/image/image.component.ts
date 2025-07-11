@@ -6,13 +6,16 @@ import {
   TemplateRef, 
   ViewChild 
 } from '@angular/core';
-import { Dialog } from '@angular/cdk/dialog';
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { ImageFile } from '../../services/image-file-registry/image-file.interface';
 
 @Component({
   selector: 'app-image',
   standalone: true,
-  imports: [],
+  imports: [
+    MatIconModule
+  ],
   templateUrl: './image.component.html',
   styleUrl: './image.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,19 +23,33 @@ import { ImageFile } from '../../services/image-file-registry/image-file.interfa
 export class ImageComponent {
   dialog = inject(Dialog);
 
+
+  private _dialogRef: DialogRef<{
+      data: {
+        image: ImageFile,
+      }
+    }, 
+    ImageFile
+  > | undefined;
+
   @ViewChild('imageDialog') dialogTemplate: TemplateRef<ImageFile> | undefined;
   
-  /** The image's metadata */
+  /** The image metadata */
   @Input() image: ImageFile | undefined;
 
   openImageDialog(): void {
     if (!this.dialogTemplate) return;
 
-    this.dialog.open(this.dialogTemplate, {
-      width: '80vw',
+    this._dialogRef = this.dialog.open(this.dialogTemplate, {
       data: {
         image: this.image
       },
     });   
+  }
+
+  closeDialog(): void {
+    if (!this._dialogRef) return;
+
+    this._dialogRef.close();
   }
 }

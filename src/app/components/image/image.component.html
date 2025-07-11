@@ -5,7 +5,23 @@
 
   <ng-template #imageDialog>
     <div class="dialog-wrapper">
-      <img [src]="image.path" [attr.alt]="image.name">
+      <button class="close" (click)="closeDialog()">
+        <mat-icon>close</mat-icon>
+        <span class="cdk-visually-hidden">Close</span>
+      </button>
+      <div class="image-wrapper">
+        <img [src]="image.path" [attr.alt]="image.name">
+      </div>
+      
+        <div class="image-footer">
+          <h1>{{image.name}}</h1>
+          @if (image.caption || image.date) {
+            <div class="footer-details">
+              <p class="caption">{{image.caption}}</p>
+              <p class="date">{{image.date}}</p>
+            </div>
+          }
+        </div>
     </div>
   </ng-template>
 }

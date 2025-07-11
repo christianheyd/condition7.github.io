@@ -1,5 +1,5 @@
 nav {
-  border-bottom: 4px solid darkblue;
+  border-bottom: 2px solid white;
   display: flex;
   flex-direction: row;
   height: 70px;
@@ -9,18 +9,28 @@ nav {
   left: 0;
   right: 0;
 
+  &::after {
+    content: '';
+    position: absolute;
+    height: 4px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: var(--light-blue);
+  }
+
+
   .header {
     display: inline-flex;
     align-items: center;
     margin-right: auto;
     margin-block-start: 0;
     margin-block-end: 0;
-    font-family: 'PermanentMarker';
-    font-size: 3.5rem;
-    line-height: 3.25rem;
+    font-family: 'RubikMonoOne';
+    font-size: 2rem;
     
     a {
-      color: rgb(78, 161, 239);
+      color: var(--light-blue);
     }
   }
 
@@ -33,14 +43,14 @@ nav {
 
     .link {
       list-style: none;
-      font-family: 'PermanentMarker';
-      font-size: 24px;
+      font-family: 'RubikMonoOne';
+      font-size: 1rem;
 
        a {
         color: #fff;
 
         &:hover {
-          color: rgb(255, 0, 0);
+          color: red;
         }
        }
     }

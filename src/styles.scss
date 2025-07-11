@@ -1,15 +1,33 @@
-@import '@angular/cdk/overlay-prebuilt.css';
+@use '@angular/cdk' as cdk;
+@include cdk.overlay();
+@include cdk.a11y-visually-hidden();
 
-/* You can add global styles to this file, and also import other style files */
+@import 'normalize.css';
+
 @font-face {
   font-family: 'PermanentMarker';
   src: url('/assets/fonts/PermanentMarker-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'RubikMonoOne';
+  src: url('/assets/fonts/RubikMonoOne-Regular.ttf');
+}
+
+:root {
+  --light-blue: rgb(78, 161, 239);
+  --darkest-blue: rgb(0, 18, 24);
 }
 
 html, body { height: 100%; }
 body { 
   margin: 0; 
   background: rgb(0, 18, 24);
+  color: #fff;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  backdrop-filter: blur(10px);
 }
 
 .cdk-overlay-pane {
