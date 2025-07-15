@@ -1,0 +1,14 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "schematics": {
+      "description": "Nothing",
+      "factory": "./schematics/index#schematics"
+    },
+    "new-page": {
+      "description": "Generate a new page component",
+      "factory": "./new-page/index#newPage",
+      "schema": "./new-page/schema.json"
+    }
+  }
+}
