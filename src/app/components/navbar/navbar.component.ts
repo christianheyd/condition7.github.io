@@ -35,9 +35,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
     url: string,
   }> = [
     // { name: 'Home', url: '/home' },
-    { name: 'Originals', url: '/originals' },
+    { name: 'Original Art', url: '/originals' },
     { name: 'Portraits', url: '/portraits' },
-    { name: 'Students', url: '/students' },
+    { name: 'Workshops', url: '/workshops' },
+    { name: 'Commissions', url: '/commissions' },
   ];
 
   ngOnInit(): void {

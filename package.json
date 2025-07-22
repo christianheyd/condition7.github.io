@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:schematics": "tsc -p ./schematics/tsconfig.json && npm link ./schematics/"
   },
   "private": true,
   "dependencies": {
