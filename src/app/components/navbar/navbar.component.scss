@@ -1,10 +1,15 @@
 @use '@angular/material' as mat;
 
+:host {
+  display: flex;
+
+}
+
 .links {
   display: inline-flex;
   align-items: center;
   padding: 0;
-  margin-right: 8px;
+  margin: 0 8px 0 auto;
   gap: 1vw;
 
   .link {
@@ -14,62 +19,83 @@
 
       a {
       text-decoration: none;
-      color: #fff;
+      color: red;
 
       &:hover {
-        color: red;
+        color: white;
+        -webkit-text-stroke: 1px red;
       }
     }
   }
 }
 
 nav {
-  background: var(--darkest-blue);
-  border-bottom: 2px solid white;
+  // background: var(--darkest-blue);
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
-  height: 70px;
-  padding: 0 8px;
-  position: fixed;
+  padding: 8px;
+  width: 100%;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
 
-  &::after {
-    content: '';
+  .header-container {
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    transform: rotate3d(-1, 2, 0, 6.5deg);
     position: absolute;
-    height: 4px;
-    bottom: 0;
-    right: 0;
+    top: 0;
     left: 0;
-    background: var(--light-blue);
-  }
 
-
-  .header {
-    display: inline-flex;
-    align-items: center;
-    margin-right: auto;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    font-family: 'RubikMonoOne';
-    font-size: 2rem;
-    
-    a {
-      color: var(--light-blue);
-      text-decoration: none;
+    .header {
+      position: absolute;
+      top: 1vh;
+      display: inline-flex;
+      align-items: center;
+      margin-right: auto;
+      margin-block-start: 0;
+      margin-block-end: 0;
+      font-family: 'RubikMonoOne';
+      // font-family: 'PermanentMarker';
+      -webkit-text-stroke: 1px var(--light-blue);
+      color: transparent;
+      text-shadow: -22px 11px 20px rgba(205,205,205,0.2);
+      
+      a {
+        color: var(--darkest-blue);
+        -webkit-text-stroke: 1px var(--light-blue);
+        text-decoration: none;
+      }
     }
-  }
 
-  .overlay-menu-button {
-    align-self: center;
-
-    @include mat.icon-overrides((color: #fff));
+    @for $i from 1 through 22 {
+      .header:nth-child(#{$i}) {
+        transform: translateZ(calc($i * -48px));
+        // transform: translateZ(calc(-1.5rem * $i / 2));
+        font-size: clamp(2rem, 6vw, 13rem);
+      }
+    }
 
     &:hover {
-      @include mat.icon_overrides((color: red));
+      .header {
+        -webkit-text-stroke: 1px red;
+        a {
+          color: white;
+          -webkit-text-stroke: 1px red;
+        }
+      }
     }
+  } 
+  
+
+  .overlay-menu-button {
+    margin-left: auto;
+    align-self: center;
+
+    @include mat.icon-overrides((color: red));
   }
 }
 
@@ -91,7 +117,20 @@ nav {
 
   .links {
     width: 100%;
-    margin-top: auto;
+    margin-top: auto;.header {
+    display: inline-flex;
+    align-items: center;
+    margin-right: auto;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    font-family: 'RubikMonoOne';
+    font-size: 2rem;
+    
+    a {
+      color: var(--light-blue);
+      text-decoration: none;
+    }
+  }
     display: flex;
     flex-direction: column;
     align-items: center;

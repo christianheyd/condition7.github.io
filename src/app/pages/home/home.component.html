@@ -1,4 +1,6 @@
 <section id="home">
-  <h1>some title</h1>
+  <app-rotating-quote 
+    [strings]="quotes">
+  </app-rotating-quote>
   <app-image-grid [images]="this.imageCategoryService.images$ | async"></app-image-grid>
 </section>
